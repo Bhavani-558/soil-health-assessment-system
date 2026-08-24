@@ -1,0 +1,10 @@
+﻿.venv/
+__pycache__/
+*.pyc
+app/uploads/*
+dataset/
+models/
+
+gradcam_result.jpg
+shap_feature_importance.png
+soil_degradation_trend.png

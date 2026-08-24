@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from app.routers import predict
 
 from app.database import Base, engine
 
@@ -7,7 +8,8 @@ from app.routers import (
     farms,
     fields,
     soil_records,
-    images
+    images,
+    fertilizer
 )
 
 Base.metadata.create_all(bind=engine)
@@ -28,3 +30,5 @@ app.include_router(farms.router)
 app.include_router(fields.router)
 app.include_router(soil_records.router)
 app.include_router(images.router)
+app.include_router(fertilizer.router)
+app.include_router(predict.router)
