@@ -1,0 +1,50 @@
+{
+  "appTitle": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ",
+  "appSubtitle": "ರೈತರ ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಸಹಾಯಕ",
+
+  "soilPhoto": "ಮಣ್ಣಿನ ಫೋಟೋ",
+  "takeChoosePhoto": "ಮಣ್ಣಿನ ಫೋಟೋ ತೆಗೆದುಕೊಳ್ಳಿ / ಆಯ್ಕೆಮಾಡಿ",
+  "usePhoneCamera": "ನಿಮ್ಮ ಫೋನ್ ಕ್ಯಾಮೆರಾವನ್ನು ಬಳಸಿ",
+
+  "soilParameters": "ಮಣ್ಣಿನ ನಿಯತಾಂಕಗಳು",
+  "nitrogen": "ನೈಟ್ರೋಜನ್ (N)",
+  "phosphorus": "ರಂಜಕ (P)",
+  "potassium": "ಪೊಟ್ಯಾಸಿಯಮ್ (K)",
+  "soilPH": "ಮಣ್ಣಿನ pH",
+  "soilMoisture": "ಮಣ್ಣಿನ ತೇವಾಂಶ",
+  "organicCarbon": "ಸಾವಯವ ಇಂಗಾಲ",
+  "electricalConductivity": "ವಿದ್ಯುತ್ ವಾಹಕತೆ",
+  "temperature": "ತಾಪಮಾನ",
+  "humidity": "ಆರ್ದ್ರತೆ",
+  "rainfall": "ಮಳೆ",
+
+  "soilType": "ಮಣ್ಣಿನ ವಿಧ",
+  "cropType": "ಬೆಳೆಯ ವಿಧ",
+  "cropGrowth": "ಬೆಳೆಯ ಬೆಳವಣಿಗೆ",
+  "season": "ಋತು",
+  "irrigation": "ನೀರಾವರಿ",
+  "previousCrop": "ಹಿಂದಿನ ಬೆಳೆ",
+  "region": "ಪ್ರದೇಶ",
+  "fertilizerUsedLast": "ಕೊನೆಯದಾಗಿ ಬಳಸಿದ ಗೊಬ್ಬರ",
+
+  "analyzeSoil": "ಮಣ್ಣನ್ನು ವಿಶ್ಲೇಷಿಸಿ",
+  "analyzingSoil": "ಮಣ್ಣನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
+
+  "soilHealthResults": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಫಲಿತಾಂಶಗಳು",
+  "cnnConfidence": "CNN ವಿಶ್ವಾಸಾರ್ಹತೆ",
+  "soilHealthScore": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ ಸ್ಕೋರ್",
+  "nutrientDeficiency": "ಪೋಷಕಾಂಶಗಳ ಕೊರತೆ",
+  "recommendedFertilizer": "ಶಿಫಾರಸು ಮಾಡಿದ ಗೊಬ್ಬರ",
+  "dosage": "ಪ್ರಮಾಣ",
+  "recommendedCrops": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು",
+  "degradationRisk": "ಮಣ್ಣಿನ ಕ್ಷೀಣತೆಯ ಅಪಾಯ",
+  "level": "ಮಟ್ಟ",
+  "longTermDegradation": "ದೀರ್ಘಕಾಲೀನ ಮಣ್ಣಿನ ಕ್ಷೀಣತೆ",
+
+  "downloadReport": "ಮಣ್ಣಿನ ಆರೋಗ್ಯ ವರದಿಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+
+  "language": "ಭಾಷೆ",
+  "english": "ಇಂಗ್ಲಿಷ್",
+  "hindi": "ಹಿಂದಿ",
+  "kannada": "ಕನ್ನಡ"
+}

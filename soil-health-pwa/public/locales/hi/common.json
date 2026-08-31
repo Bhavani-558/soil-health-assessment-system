@@ -1,0 +1,50 @@
+{
+  "appTitle": "मृदा स्वास्थ्य",
+  "appSubtitle": "किसान मृदा स्वास्थ्य सहायक",
+
+  "soilPhoto": "मृदा की तस्वीर",
+  "takeChoosePhoto": "मृदा की तस्वीर लें / चुनें",
+  "usePhoneCamera": "अपने फोन के कैमरे का उपयोग करें",
+
+  "soilParameters": "मृदा के मानदंड",
+  "nitrogen": "नाइट्रोजन (N)",
+  "phosphorus": "फास्फोरस (P)",
+  "potassium": "पोटैशियम (K)",
+  "soilPH": "मृदा pH",
+  "soilMoisture": "मृदा नमी",
+  "organicCarbon": "जैविक कार्बन",
+  "electricalConductivity": "विद्युत चालकता",
+  "temperature": "तापमान",
+  "humidity": "आर्द्रता",
+  "rainfall": "वर्षा",
+
+  "soilType": "मृदा का प्रकार",
+  "cropType": "फसल का प्रकार",
+  "cropGrowth": "फसल की वृद्धि",
+  "season": "मौसम",
+  "irrigation": "सिंचाई",
+  "previousCrop": "पिछली फसल",
+  "region": "क्षेत्र",
+  "fertilizerUsedLast": "पिछली बार इस्तेमाल किया गया उर्वरक",
+
+  "analyzeSoil": "मृदा का विश्लेषण करें",
+  "analyzingSoil": "मृदा का विश्लेषण हो रहा है...",
+
+  "soilHealthResults": "मृदा स्वास्थ्य परिणाम",
+  "cnnConfidence": "CNN विश्वसनीयता",
+  "soilHealthScore": "मृदा स्वास्थ्य स्कोर",
+  "nutrientDeficiency": "पोषक तत्वों की कमी",
+  "recommendedFertilizer": "अनुशंसित उर्वरक",
+  "dosage": "मात्रा",
+  "recommendedCrops": "अनुशंसित फसलें",
+  "degradationRisk": "मृदा क्षरण जोखिम",
+  "level": "स्तर",
+  "longTermDegradation": "दीर्घकालिक मृदा क्षरण",
+
+  "downloadReport": "मृदा स्वास्थ्य रिपोर्ट डाउनलोड करें",
+
+  "language": "भाषा",
+  "english": "अंग्रेज़ी",
+  "hindi": "हिंदी",
+  "kannada": "कन्नड़"
+}

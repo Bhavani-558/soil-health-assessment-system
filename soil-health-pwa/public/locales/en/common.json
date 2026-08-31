@@ -1,0 +1,50 @@
+{
+  "appTitle": "Soil Health",
+  "appSubtitle": "Farmer Soil Health Assistant",
+
+  "soilPhoto": "Soil Photo",
+  "takeChoosePhoto": "Take / Choose Soil Photo",
+  "usePhoneCamera": "Use your phone camera",
+
+  "soilParameters": "Soil Parameters",
+  "nitrogen": "Nitrogen (N)",
+  "phosphorus": "Phosphorus (P)",
+  "potassium": "Potassium (K)",
+  "soilPH": "Soil pH",
+  "soilMoisture": "Soil Moisture",
+  "organicCarbon": "Organic Carbon",
+  "electricalConductivity": "Electrical Conductivity",
+  "temperature": "Temperature",
+  "humidity": "Humidity",
+  "rainfall": "Rainfall",
+
+  "soilType": "Soil Type",
+  "cropType": "Crop Type",
+  "cropGrowth": "Crop Growth",
+  "season": "Season",
+  "irrigation": "Irrigation",
+  "previousCrop": "Previous Crop",
+  "region": "Region",
+  "fertilizerUsedLast": "Fertilizer Used Last",
+
+  "analyzeSoil": "Analyze Soil",
+  "analyzingSoil": "Analyzing Soil...",
+
+  "soilHealthResults": "Soil Health Results",
+  "cnnConfidence": "CNN Confidence",
+  "soilHealthScore": "Soil Health Score",
+  "nutrientDeficiency": "Nutrient Deficiency",
+  "recommendedFertilizer": "Recommended Fertilizer",
+  "dosage": "Dosage",
+  "recommendedCrops": "Recommended Crops",
+  "degradationRisk": "Degradation Risk",
+  "level": "Level",
+  "longTermDegradation": "Long-Term Degradation",
+
+  "downloadReport": "Download Soil Health Report",
+
+  "language": "Language",
+  "english": "English",
+  "hindi": "Hindi",
+  "kannada": "Kannada"
+}
