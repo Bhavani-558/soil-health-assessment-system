@@ -1,4 +1,5 @@
 import os
+import base64
 import joblib
 import pandas as pd
 
@@ -352,11 +353,22 @@ def final_prediction(
     )
     print("Calculating long-term degradation trend...")
 
-    degradation_trend_result = calculate_degradation_trend()
+    degradation_trend_result = calculate_degradation_trend(
+        soil_data
+    )
 
     # --------------------------------------------------------
     # E. COMBINE EVERYTHING
     # --------------------------------------------------------
+
+    gradcam_b64 = None
+    gradcam_img_path = gradcam_result.get("gradcam_image", "gradcam_result.jpg")
+    if os.path.exists(gradcam_img_path):
+        try:
+            with open(gradcam_img_path, "rb") as img_file:
+                gradcam_b64 = "data:image/jpeg;base64," + base64.b64encode(img_file.read()).decode("utf-8")
+        except Exception as err:
+            print("Error encoding Grad-CAM image:", err)
 
     final_result = {
 
@@ -371,6 +383,12 @@ def final_prediction(
 
         "gradcam_image":
             gradcam_result["gradcam_image"],
+
+        "gradcam_image_url":
+            "http://10.229.174.90:8000/gradcam_result.jpg",
+
+        "gradcam_image_base64":
+            gradcam_b64,
 
         "soil_health_score":
             soil_health_result["soil_health_score"],

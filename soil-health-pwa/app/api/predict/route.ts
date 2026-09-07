@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     const incomingFormData = await request.formData();
 
     const response = await fetch(
-      "http://10.229.174.90:8000/predict/",
+      "http://127.0.0.1:8000/predict/",
       {
         method: "POST",
         body: incomingFormData,

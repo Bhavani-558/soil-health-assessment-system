@@ -37,6 +37,17 @@ model = tf.keras.models.load_model(
 
 print("CNN model loaded successfully!")
 
+CONV_LAYER = model.get_layer("conv2d_2")
+FEATURE_EXTRACTOR = tf.keras.Model(
+    inputs=model.inputs,
+    outputs=CONV_LAYER.output
+)
+POOLING_LAYER = model.get_layer("max_pooling2d_2")
+FLATTEN_LAYER = model.get_layer("flatten")
+DENSE_LAYER = model.get_layer("dense")
+DROPOUT_LAYER = model.get_layer("dropout")
+OUTPUT_LAYER = model.get_layer("dense_1")
+
 
 # ============================================================
 # 4. GRAD-CAM FUNCTION
@@ -84,28 +95,13 @@ def generate_gradcam(
     # Last convolutional layer
     # --------------------------------------------------------
 
-    conv_layer = model.get_layer(
-        "conv2d_2"
-    )
-
-
-    # --------------------------------------------------------
-    # Feature extractor
-    # --------------------------------------------------------
-
-    feature_extractor = tf.keras.Model(
-        inputs=model.inputs,
-        outputs=conv_layer.output
-    )
-
-
     # --------------------------------------------------------
     # Grad-CAM
     # --------------------------------------------------------
 
     with tf.GradientTape() as tape:
 
-        conv_outputs = feature_extractor(
+        conv_outputs = FEATURE_EXTRACTOR(
             img_tensor,
             training=False
         )
@@ -115,29 +111,19 @@ def generate_gradcam(
         x = conv_outputs
 
         # max_pooling2d_2
-        x = model.get_layer(
-            "max_pooling2d_2"
-        )(x)
+        x = POOLING_LAYER(x)
 
         # flatten
-        x = model.get_layer(
-            "flatten"
-        )(x)
+        x = FLATTEN_LAYER(x)
 
         # dense
-        x = model.get_layer(
-            "dense"
-        )(x)
+        x = DENSE_LAYER(x)
 
         # dropout
-        x = model.get_layer(
-            "dropout"
-        )(x, training=False)
+        x = DROPOUT_LAYER(x, training=False)
 
         # final layer
-        predictions = model.get_layer(
-            "dense_1"
-        )(x)
+        predictions = OUTPUT_LAYER(x)
 
         predicted_index = tf.argmax(
             predictions[0]
@@ -289,7 +275,7 @@ def generate_gradcam(
             confidence * 100,
             2
         ),
-        "gradcam_layer": conv_layer.name,
+        "gradcam_layer": CONV_LAYER.name,
         "gradcam_image": output_path
     }
 

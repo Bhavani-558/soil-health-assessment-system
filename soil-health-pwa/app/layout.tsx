@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { AuthProvider } from "../lib/auth-context";
+import { SoilProvider } from "../lib/soil-context";
+import DevSwCleaner from "../components/DevSwCleaner";
 
 import "./globals.css";
 
@@ -15,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <DevSwCleaner />
+        <AuthProvider>
+          <SoilProvider>{children}</SoilProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

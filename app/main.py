@@ -1,7 +1,7 @@
-from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi import FastAPI, HTTPException
 import os
 
-from fastapi import HTTPException
 from pydantic import BaseModel
 from sarvamai import SarvamAI
 from fastapi.middleware.cors import CORSMiddleware
@@ -42,6 +42,17 @@ app.add_middleware(
 @app.get("/")
 def root():
     return {"message": "Soil Health Assessment API"}
+
+@app.get("/gradcam_result.jpg")
+def get_gradcam_result():
+    gradcam_path = os.path.abspath("gradcam_result.jpg")
+    if os.path.exists(gradcam_path):
+        return FileResponse(
+            gradcam_path,
+            media_type="image/jpeg",
+            headers={"Cache-Control": "no-cache, no-store, must-revalidate"}
+        )
+    raise HTTPException(status_code=404, detail="Grad-CAM image not found")
 
 
 app.include_router(health.router)

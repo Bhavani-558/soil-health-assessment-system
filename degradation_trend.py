@@ -13,7 +13,7 @@ from sklearn.linear_model import Ridge
 # MAIN FUNCTION
 # ============================================================
 
-def calculate_degradation_trend():
+def calculate_degradation_trend(soil_data=None):
 
     # ========================================================
     # 1. LOAD HISTORICAL DATA
@@ -69,24 +69,31 @@ def calculate_degradation_trend():
         2030
     ])
 
-    # Use latest soil values as baseline
-    latest = data.iloc[-1]
+    # Use input soil values as baseline if available, otherwise latest historical row
+    if soil_data:
+        n_val = float(soil_data.get("Nitrogen", soil_data.get("Nitrogen_Level", data.iloc[-1]["Nitrogen"])))
+        p_val = float(soil_data.get("Phosphorus", soil_data.get("Phosphorus_Level", data.iloc[-1]["Phosphorus"])))
+        k_val = float(soil_data.get("Potassium", soil_data.get("Potassium_Level", data.iloc[-1]["Potassium"])))
+        ph_val = float(soil_data.get("pH", soil_data.get("Soil_pH", data.iloc[-1]["Soil_pH"])))
+        oc_val = float(soil_data.get("Organic_C", soil_data.get("Organic_Carbon", data.iloc[-1]["Organic_Carbon"])))
+        moist_val = float(soil_data.get("Moisture", soil_data.get("Soil_Moisture", data.iloc[-1]["Soil_Moisture"])))
+    else:
+        latest = data.iloc[-1]
+        n_val = latest["Nitrogen"]
+        p_val = latest["Phosphorus"]
+        k_val = latest["Potassium"]
+        ph_val = latest["Soil_pH"]
+        oc_val = latest["Organic_Carbon"]
+        moist_val = latest["Soil_Moisture"]
 
     future_data = pd.DataFrame({
-
         "Year": future_years,
-
-        "Nitrogen": latest["Nitrogen"],
-
-        "Phosphorus": latest["Phosphorus"],
-
-        "Potassium": latest["Potassium"],
-
-        "Soil_pH": latest["Soil_pH"],
-
-        "Organic_Carbon": latest["Organic_Carbon"],
-
-        "Soil_Moisture": latest["Soil_Moisture"]
+        "Nitrogen": n_val,
+        "Phosphorus": p_val,
+        "Potassium": k_val,
+        "Soil_pH": ph_val,
+        "Organic_Carbon": oc_val,
+        "Soil_Moisture": moist_val
     })
 
     future_predictions = model.predict(
